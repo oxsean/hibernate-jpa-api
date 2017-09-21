@@ -90,6 +90,11 @@ public @interface Column {
     String columnDefinition() default "";
 
     /**
+     * (Optional) The comment of the column.
+     */
+    String comment() default "";
+
+    /**
      * (Optional) The name of the table that contains the column.
      * If absent the column is assumed to be in the primary table.
      */

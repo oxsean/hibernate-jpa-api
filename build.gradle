@@ -22,7 +22,7 @@ repositories {
 }
 
 group = 'org.hibernate.javax.persistence'
-version = '1.0.0.Final'
+version = '1.0.0.Final-patched'
 
 targetCompatibility=1.6
 sourceCompatibility=1.6
@@ -38,9 +38,9 @@ jar {
         // need to be here (temporarily).
         classesDir = sourceSets.main.output.classesDir
         classpath = configurations.runtime
-        
+
         // Let OsgiManifest automatically generate all imports.
-        
+
         // Explicitly list exports to control the version.
         instruction "Export-Package",
             "javax.persistence;version='${gradle.jpaVersion}.0'",
@@ -48,9 +48,9 @@ jar {
             "javax.persistence.metamodel;version='${gradle.jpaVersion}.0'",
             "javax.persistence.spi;version='${gradle.jpaVersion}.0'",
             "*"
-        
+
         instruction 'Bundle-Vendor', 'Hibernate.org'
-        
+
         instruction 'Built-By', 'Hibernate.org'
         instruction 'Specification-Title', "Java Persistence API, Version ${gradle.jpaVersion}"
         instruction 'Specification-Version', "${gradle.jpaVersion}"
@@ -71,9 +71,9 @@ publishing {
                 classifier "sources"
             }
 
-            artifact javadocJar {
+/*            artifact javadocJar {
                 classifier "javadoc"
-            }
+            }*/
 
             pom.withXml {
                 // append additional metadata
