@@ -95,6 +95,11 @@ public @interface Column {
     String comment() default "";
 
     /**
+     * (Optional) The sql default value of the column.
+     */
+    String def() default "";
+
+    /**
      * (Optional) The name of the table that contains the column.
      * If absent the column is assumed to be in the primary table.
      */
