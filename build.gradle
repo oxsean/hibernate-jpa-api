@@ -134,12 +134,16 @@ publishing {
     repositories {
         maven {
             if ( project.version.endsWith( 'SNAPSHOT' ) ) {
-                name 'jboss-snapshots-repository'
-                url 'https://repository.jboss.org/nexus/content/repositories/snapshots'
+                name 'nexus-snapshots'
+                url 'http://dev.gtis.com.cn/nexus/content/repositories/snapshots/'
             }
             else {
-                name 'jboss-releases-repository'
-                url 'https://repository.jboss.org/nexus/service/local/staging/deploy/maven2/'
+                name 'nexus-releases'
+                url 'http://dev.gtis.com.cn/nexus/content/repositories/releases/'
+            }
+            credentials {
+                username "admin"
+                password "admin123"
             }
         }
     }
